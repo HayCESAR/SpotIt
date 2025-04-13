@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v3#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v3# http://www.loc.gov/alto/v3/alto-3-0.xsd">
+        <Description>
+                <MeasurementUnit>pixel</MeasurementUnit>
+                <sourceImageInformation>
+                        <fileName>/Users/customer/Documents/samples/resize_images/galaxy_nexus/baseline_hello_android.png</fileName>
+                </sourceImageInformation>
+                <OCRProcessing ID="OCR_0">
+                        <ocrProcessingStep>
+                                <processingSoftware>
+                                        <softwareName>tesseract 5.4.1</softwareName>
+                                </processingSoftware>
+                        </ocrProcessingStep>
+                </OCRProcessing>
+        </Description>
+        <Layout>
+                <Page WIDTH="720" HEIGHT="1280" PHYSICAL_IMG_NR="0" ID="page_0">
+                        <PrintSpace HPOS="0" VPOS="0" WIDTH="720" HEIGHT="1280">
+                                <ComposedBlock ID="cblock_0" HPOS="3" VPOS="10" WIDTH="261" HEIGHT="72">
+                                        <TextBlock ID="block_0" HPOS="3" VPOS="10" WIDTH="261" HEIGHT="72">
+                                                <TextLine ID="line_0" HPOS="18" VPOS="10" WIDTH="246" HEIGHT="28">
+                                                        <String ID="string_0" HPOS="18" VPOS="15" WIDTH="67" HEIGHT="20" WC="0.89" CONTENT="12:6"/><SP WIDTH="68" VPOS="15" HPOS="85"/>
+                                                        <String ID="string_1" HPOS="153" VPOS="10" WIDTH="22" HEIGHT="28" WC="0.59" CONTENT="O90"/><SP WIDTH="23" VPOS="10" HPOS="175"/>
+                                                        <String ID="string_2" HPOS="198" VPOS="12" WIDTH="20" HEIGHT="24" WC="0.83" CONTENT="@"/><SP WIDTH="22" VPOS="12" HPOS="218"/>
+                                                        <String ID="string_3" HPOS="240" VPOS="12" WIDTH="24" HEIGHT="24" WC="0.96" CONTENT="©"/>
+                                                </TextLine>
+                                                <TextLine ID="line_1" HPOS="3" VPOS="58" WIDTH="197" HEIGHT="24">
+                                                        <String ID="string_4" HPOS="3" VPOS="58" WIDTH="70" HEIGHT="24" WC="0.95" CONTENT="Hello"/><SP WIDTH="10" VPOS="58" HPOS="73"/>
+                                                        <String ID="string_5" HPOS="83" VPOS="58" WIDTH="117" HEIGHT="24" WC="0.95" CONTENT="Android!"/>
+                                                </TextLine>
+                                        </TextBlock>
+                                </ComposedBlock>
+                                <Illustration ID="cblock_1" HPOS="572" VPOS="0" WIDTH="148" HEIGHT="52"></Illustration>
+                                <Illustration ID="cblock_2" HPOS="0" VPOS="1180" WIDTH="720" HEIGHT="100"></Illustration>
+                        </PrintSpace>
+                </Page>
+        </Layout>
+</alto>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v3#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v3# http://www.loc.gov/alto/v3/alto-3-0.xsd">
+        <Description>
+                <MeasurementUnit>pixel</MeasurementUnit>
+                <sourceImageInformation>
+                        <fileName>/Users/customer/Documents/SnapshotUI_oracle/Android/actual_button.png</fileName>
+                </sourceImageInformation>
+                <OCRProcessing ID="OCR_0">
+                        <ocrProcessingStep>
+                                <processingSoftware>
+                                        <softwareName>tesseract 5.4.1</softwareName>
+                                </processingSoftware>
+                        </ocrProcessingStep>
+                </OCRProcessing>
+        </Description>
+        <Layout>
+                <Page WIDTH="1080" HEIGHT="2340" PHYSICAL_IMG_NR="0" ID="page_0">
+                        <PrintSpace HPOS="0" VPOS="0" WIDTH="1080" HEIGHT="2340">
+                                <ComposedBlock ID="cblock_0" HPOS="160" VPOS="53" WIDTH="258" HEIGHT="37">
+                                        <TextBlock ID="block_0" HPOS="160" VPOS="53" WIDTH="258" HEIGHT="37">
+                                                <TextLine ID="line_0" HPOS="160" VPOS="53" WIDTH="258" HEIGHT="37">
+                                                        <String ID="string_0" HPOS="160" VPOS="58" WIDTH="71" HEIGHT="28" WC="0.75" CONTENT="610"/><SP WIDTH="33" VPOS="58" HPOS="231"/>
+                                                        <String ID="string_1" HPOS="264" VPOS="53" WIDTH="30" HEIGHT="37" WC="0.68" CONTENT="0"/><SP WIDTH="37" VPOS="53" HPOS="294"/>
+                                                        <String ID="string_2" HPOS="331" VPOS="49" WIDTH="30" HEIGHT="50" WC="0.72" CONTENT="@&amp;"/><SP WIDTH="24" VPOS="49" HPOS="361"/>
+                                                        <String ID="string_3" HPOS="385" VPOS="54" WIDTH="33" HEIGHT="34" WC="0.90" CONTENT="©"/>
+                                                </TextLine>
+                                        </TextBlock>
+                                </ComposedBlock>
+                                <Illustration ID="cblock_1" HPOS="0" VPOS="0" WIDTH="1080" HEIGHT="140"></Illustration>
+                                <ComposedBlock ID="cblock_2" HPOS="436" VPOS="189" WIDTH="207" HEIGHT="29">
+                                        <TextBlock ID="block_1" HPOS="436" VPOS="189" WIDTH="207" HEIGHT="29">
+                                                <TextLine ID="line_1" HPOS="436" VPOS="189" WIDTH="207" HEIGHT="29">
+                                                        <String ID="string_4" HPOS="436" VPOS="189" WIDTH="96" HEIGHT="29" WC="0.95" CONTENT="Click"/><SP WIDTH="18" VPOS="189" HPOS="532"/>
+                                                        <String ID="string_5" HPOS="550" VPOS="189" WIDTH="93" HEIGHT="29" WC="0.95" CONTENT="here!"/>
+                                                </TextLine>
+                                        </TextBlock>
+                                </ComposedBlock>
+                                <Illustration ID="cblock_3" HPOS="372" VPOS="284" WIDTH="1" HEIGHT="100"></Illustration>
+                                <Illustration ID="cblock_4" HPOS="0" VPOS="2270" WIDTH="1080" HEIGHT="70"></Illustration>
+                        </PrintSpace>
+                </Page>
+        </Layout>
+</alto>
