@@ -26,15 +26,3 @@ def is_contained(box1, box2):
   x1_2, y1_2, x2_2, y2_2 = box2
 
   return x1_2 <= x1_1 and y1_2 <= y1_1 and x2_2 >= x2_1 and y2_2 >= y2_1
-
-# def add_missing_elements(list1, list2):
-#     """
-#     Adds missing elements from list1 to list2 if they are not already present.
-#     :param list1: List of objects to check.
-#     :param list2: List of objects to update.
-#     :return: Updated list2 with missing elements added.
-#     """
-#     for item in list1:
-#         if item not in list2:
-#             list2.append(item)
-#     return list2

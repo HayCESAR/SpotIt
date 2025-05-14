@@ -3,17 +3,30 @@ from itertools import product
 
 class UIComponentsComparison():
     def __init__(self, baseline_uihierarchy, actual_uihierarchy):
+        # Initializes the UIComponentsComparison object and performs correlation between UI components from the baseline and actual hierarchies
         baseline_uicomponents = baseline_uihierarchy.list_all_components()
         actual_uicomponents = actual_uihierarchy.list_all_components()
         self.correlation = self.establish_correlations(baseline_uicomponents, actual_uicomponents)
 
 
     def similarity_score(self, str1, str2):
-        """Compute a similarity score between two strings."""
+        """
+        Computes the similarity ratio between two strings using the SequenceMatcher.
+
+        :param str1: First string to compare.
+        :param str2: Second string to compare.
+        :return: Float between 0 and 1 representing the similarity ratio.
+        """
         return SequenceMatcher(None, str1, str2).ratio()
 
     def overlap(self, bounds1, bounds2):
-        """Compute the overlap ratio of two bounding boxes."""
+        """
+        Computes the Intersection over Union (IoU) between two bounding boxes.
+
+        :param bounds1: Tuple or list of four integers [x1, y1, x2, y2].
+        :param bounds2: Tuple or list of four integers [x1, y1, x2, y2].
+        :return: Float between 0 and 1 representing the IoU, or 0 if invalid input.
+        """
         if not (isinstance(bounds1, (list, tuple)) and isinstance(bounds2, (list, tuple)) and len(bounds1) == 4 and len(bounds2) == 4):
             return 0
 
@@ -33,15 +46,20 @@ class UIComponentsComparison():
         return intersection / union if union else 0
 
     def establish_correlations(self, baseline, actual):
-        """Establish correlations between baseline and actual lists of dictionaries."""
-        pairs = []
-        used = set()
+        """
+        Establishes correlations between baseline and actual UI components by
+        computing similarity scores based on text, class, content-desc, and bounds.
 
+        :param baseline: List of UI components from the baseline hierarchy.
+        :param actual: List of UI components from the actual hierarchy.
+        :return: A dictionary mapping baseline component line numbers to actual ones or "Unrelated".
+        """
+        pairs = []
+
+        # Generate all possible pairs and compute their similarity score
         for b, a in product(baseline, actual):
             dict1=b.as_dict()
             dict2=a.as_dict()
-            if dict1['line'] in used or dict2['line'] in used:
-                continue
 
             text_sim = self.similarity_score(str(dict1.get('text', '')), str(dict2.get('text', '')))
             class_sim = self.similarity_score(str(dict1.get('class', '')), str(dict2.get('class', '')))
@@ -52,17 +70,20 @@ class UIComponentsComparison():
                 bounds2 = eval(dict2['bounds']) if isinstance(dict2['bounds'], str) else dict2['bounds']
                 bounds_sim = self.overlap(bounds1, bounds2)
             except:
-                bounds_sim = 0  # Default to 0 if parsing fails
+                bounds_sim = 0  # Handle invalid or missing bounds
 
-            total_score = 0.4 * text_sim + 0.2 * class_sim + 0.2 * desc_sim + 0.2 * bounds_sim
+            # Weighted total score
+            total_score = 0.5 * text_sim + 0.2 * class_sim + 0.2 * desc_sim + 0.1 * bounds_sim
 
             pairs.append((b, a, total_score))
 
+        # Sort all pairs by similarity score in descending order
         pairs.sort(key=lambda x: x[2], reverse=True)
         correlation = {}
         used_baseline = set()
         used_actual = set()
 
+        # Select the best non-conflicting matches
         for b, a, score in pairs:
             if b.sourceLine not in used_baseline and a.sourceLine not in used_actual:
                 correlation[b.sourceLine] = a.sourceLine
@@ -71,13 +92,14 @@ class UIComponentsComparison():
                 used_baseline.add(b.sourceLine)
                 used_actual.add(a.sourceLine)
 
-        # Assign "Unrelated" to unmatched items
+        # Mark unmatched baseline components as "Unrelated"
         for item in baseline:
             dictionary=item.as_dict()
             if dictionary['line'] not in used_baseline:
                 correlation[dictionary['line']] = "Unrelated"
                 b.addCorrelation({"UIComponent": "Unrelated", "Score": 0.0})
 
+        # Mark unmatched actual components as "Unrelated"
         for item in actual:
             dictionary=item.as_dict()
             if dictionary['line'] not in used_actual:
